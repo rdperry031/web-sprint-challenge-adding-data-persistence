@@ -1,8 +1,8 @@
 const db = require('../../data/dbConfig');
 
 async function getProjects() {
-  const projects = await db('projects');
-  return projects.map((project) => {
+  const query = await db('projects');
+  return query.map((project) => {
     return {
       ...project,
       project_completed: Boolean(project.project_completed),
