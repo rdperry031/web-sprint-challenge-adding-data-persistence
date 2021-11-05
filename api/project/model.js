@@ -23,5 +23,5 @@ async function createProject(project) {
 module.exports = {
   getProjects,
   getProjectById,
-  createProject  
-}; 
+  createProject,
+};

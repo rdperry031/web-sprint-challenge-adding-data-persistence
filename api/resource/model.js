@@ -10,14 +10,13 @@ async function getResourceById(resource_id) {
   return query;
 }
 
-async function createResource(resource){
-    const [resource_id] = await db('resources').insert(resource)
-    return getResourceById(resource_id)
-
+async function createResource(resource) {
+  const [resource_id] = await db('resources').insert(resource);
+  return getResourceById(resource_id);
 }
 
 module.exports = {
   getResources,
   getResourceById,
-  createResource
+  createResource,
 };
