@@ -1,8 +1,8 @@
 const db = require('../../data/dbConfig');
 
 async function getProjects() {
-  const rows = await db('projects');
-  return rows.map((project) => {
+  const projects = await db('projects');
+  return projects.map((project) => {
     return {
       ...project,
       project_completed: Boolean(project.project_completed),
@@ -23,5 +23,5 @@ async function createProject(project) {
 module.exports = {
   getProjects,
   getProjectById,
-  createProject,
-};
+  createProject  
+}; 
