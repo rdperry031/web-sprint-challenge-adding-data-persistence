@@ -28,6 +28,13 @@ exports.up = function (knex) {
     .createTable('project_resources', (table) => {
       table.increments('resource_assignment_id');
       table
+        .integer('project_id')
+        .unsigned()
+        .references('project_id')
+        .inTable('projects')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+        table
         .integer('resource_id')
         .unsigned()
         .notNullable()
